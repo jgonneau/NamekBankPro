@@ -1,0 +1,8 @@
+App\Entity\Company:
+  company_{1..10}:
+    name: <word()>
+    slogan: <sentence()>
+    phoneNumber: <e164PhoneNumber()>
+    address: <streetAddress()>
+    websiteUrl: <domainName()>
+    pictureUrl: <imageUrl(640, 0480, 'abstract')>
