@@ -31,6 +31,9 @@ class CompanyController extends FOSRestController
      */
     public function getCompanysAction () {
 
+        //Si ADMIN authentifié, alors on display toutes les compagnies
+        //Sinon, on affiche que celle du master authentifié
+        //ou bien, on renvoit une erreur
         if ( in_array("ROLE_ADMIN", $this->getUser()->getRoles()) ) {
             $Companys = $this->CompanyRepository->findAll();
             return $this->view($Companys);

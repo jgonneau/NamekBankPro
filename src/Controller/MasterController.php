@@ -83,6 +83,7 @@ class MasterController extends FOSRestController
      */
     public function putMasterAction (Request $request, int $id) {
 
+        //Modification du compte Master, soit par ADMIN soit par le master en question
         $master_data = $this->masterRepository->find($id);
 
         if ( $this->getUser()->getApiKey() === $master_data->getApiKey() || in_array("ROLE_ADMIN", $this->getUser()->getRoles()) ) {
